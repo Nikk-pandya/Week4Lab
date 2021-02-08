@@ -27,9 +27,17 @@ public class NoteServlet extends HttpServlet {
         
    
         String title = br.readLine();
-             String con = br.readLine();
+       String con = br.readLine();
       
-      
+        note note = new note(title, con);
+     
+        request.setAttribute("note", note);
+        request.setAttribute("con", note);
+        
+        if (request.getParameter("edit")==null) {
+            getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp")
+        .forward(request, response);
+        }
         getServletContext().getRequestDispatcher("/WEB-INF/editnote.jsp")
             .forward(request, response);
 
@@ -53,7 +61,12 @@ public class NoteServlet extends HttpServlet {
         pw.println(conedit);
         
         pw.close();
-       
+        
+        note note = new note(headeredit, conedit);
+        
+        request.setAttribute("note", note);
+        request.setAttribute("con", note);
+        
         getServletContext().getRequestDispatcher("/WEB-INF/viewnote.jsp")
         .forward(request, response);
     }

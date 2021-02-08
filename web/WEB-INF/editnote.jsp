@@ -12,11 +12,11 @@
         <title>Edit Note</title>
     </head>
     <body>
-        <h1>Note</h1>
+        <h1>Simple Note Keeper</h1>
         <h2>View Note</h2>
         <form method="post" action="note">
-            <p>Title: <input type="text" name="headeredit" value=${note.title}></p>
-            <p>Contents: <textarea name="conedit"value=${note.con}></textarea></p>
+            <p>Title: <input type="text" name="conedit" value="${note.title}"></p>
+            <p>Contents: <textarea name="headeredit">${note.con}</textarea></p>
             <input type="submit" value="save">
         </form>
     </body>

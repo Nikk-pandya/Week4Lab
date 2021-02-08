@@ -10,8 +10,8 @@ import java.io.Serializable;
 
 public class note implements Serializable {
     
-     String title;
-     String con;
+    private String title;
+    private String con;
     
 
     public note() {
@@ -28,8 +28,8 @@ public class note implements Serializable {
        
     }
     
-        public void setCont(String content) {
-        this.con = content;
+        public void setCon(String con) {
+        this.con = con;
     }
         
      public String getCon() {
